@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "removeComments": true,
+    "incremental": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "target": "es2017",
+    "outDir": "dist",
+    "paths": {
+      "#/*": ["src/*"]
+    },
+  },
+  "include": ["src/**/*"]
+}

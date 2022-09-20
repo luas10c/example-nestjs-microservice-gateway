@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package hero;
+
+message User {
+  string id = 1;
+  string full_name = 2;
+  string email = 3;
+  string username = 4;
+}
+
+message ResponseGetUsers {
+  repeated User users = 1;
+}
+
+message RequestGetByUserId {
+  string id = 1;
+}
+
+message RequestGetByEmail {
+  string email = 1;
+}
+
+message RequestGetByUsername {
+  string username = 1;
+}
+
+message ResponseGetByUserId {
+  User user = 1;
+}
+
+message ResponseGetByEmail {
+  User user = 1;
+}
+
+message ResponseGetByUsername {
+  User user = 1;
+}
+
+
+service HeroService {
+  rpc getUsers(google.protobuf.Empty) returns (ResponseGetUsers);
+  rpc getUserById(RequestGetByUserId) returns (ResponseGetByUserId);
+  rpc getUserByEmail(RequestGetByEmail) returns (ResponseGetByEmail);
+  rpc getUserByUsername(RequestGetByUsername) returns (ResponseGetByUsername);
+}
